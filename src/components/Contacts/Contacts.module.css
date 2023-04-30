@@ -1,0 +1,51 @@
+.contacts__section {
+  background-color: rgba(174, 199, 255, 0.336);
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 800px;
+  margin-top: 10px;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+li button {
+  width: 50px;
+  height: 20px;
+  margin-left: 5px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #7f7fff;
+  box-shadow: 1px 1px 2px 3px rgba(152, 153, 153, 0.384);
+  transition: all 0.4s;
+  color: rgb(255, 255, 255);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+}
+li button:hover {
+  background-color: #7fffb9;
+  color: #00570c;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+p span {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: cadetblue;
+}
+p span[id='number'] {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #7f7fff;
+}

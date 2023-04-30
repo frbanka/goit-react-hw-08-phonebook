@@ -1,0 +1,48 @@
+.phonebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.phonebook__section {
+    padding-bottom: 50px;
+}
+.phonebook__label {
+  justify-self: left;
+  align-self: flex-start;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: cadetblue;
+  padding-left: 5px;
+}
+.phonebook__input {
+  width: 300px;
+  height: 25px;
+  border-radius: 10px;
+  border: 2px solid #7f7fff;
+  margin-bottom: 10px;
+}
+.phonebook__button {
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #7f7fff;
+  box-shadow: 1px 1px 2px 3px rgba(152, 153, 153, 0.384);
+  transition: all 0.4s;
+}
+.phonebook__button:hover {
+  background-color: #7fffb9;
+  color: #00570c;
+  cursor: pointer;
+  transition: all 0.4s;
+}
