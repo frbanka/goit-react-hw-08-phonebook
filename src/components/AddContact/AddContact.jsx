@@ -3,10 +3,8 @@ import { createContact } from '../../redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
 import css from '../AddContact/AddContact.module.css';
-
 const AddContact = () => {
   const dispatch = useDispatch();
-
   const createNewContact = e => {
     e.preventDefault();
 
