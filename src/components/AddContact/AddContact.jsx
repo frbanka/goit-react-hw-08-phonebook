@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { createContact } from '../../redux/contactsSlice';
 import { nanoid } from 'nanoid';
-import { Notify } from 'notiflix';
+
 import css from '../AddContact/AddContact.module.css';
 
 const AddContact = () => {
