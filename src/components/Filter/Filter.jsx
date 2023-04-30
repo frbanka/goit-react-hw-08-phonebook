@@ -1,19 +1,26 @@
-import PropTypes from 'prop-types';
 import css from '../Filter/Filter.module.css';
-const Filter = ({ filter, onChange }) => {
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
+import { nanoid } from 'nanoid';
+const Filter = () => {
+  const dispatch = useDispatch();
+  const filterId = nanoid();
+
+  const filterChange = e => {
+    dispatch(setFilter(e.currentTarget.value));
+  };
+
   return (
     <input
       className={css.filter__input}
       type="text"
       name="filter"
-      value={filter}
-      onChange={onChange}
+      id={filterId}
+      onChange={e => filterChange(e)}
       placeholder="Search contact by name"
     />
   );
 };
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+
 export default Filter;
