@@ -6,12 +6,13 @@ import { selectIsLoading } from '../../redux/selector';
 
 const Contacts = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+
   const contacts = useSelector(state => {
     return state.contacts.items.filter(item =>
       item.name.toLowerCase().trim().includes(state.filter.toLowerCase().trim())
     );
   });
-  const isLoading = useSelector(selectIsLoading);
 
   return (
     <section className={css.contacts__section}>
