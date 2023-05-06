@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { createContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/managment';
 import { nanoid } from 'nanoid';
 
 import css from '../AddContact/AddContact.module.css';
@@ -8,12 +8,13 @@ const AddContact = () => {
   const createNewContact = e => {
     e.preventDefault();
 
-    const newContact = {
-      id: nanoid(),
-      name: e.target.elements.name.value,
-      number: e.target.elements.number.value,
-    };
-    dispatch(createContact(newContact));
+    dispatch(
+      addContact({
+        id: nanoid(),
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+      })
+    );
 
     e.target.reset();
   };
@@ -36,7 +37,7 @@ const AddContact = () => {
           <input
             className={css.phonebook__input}
             type="tel"
-            name="number"
+            name="phone"
             placeholder="phone number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
