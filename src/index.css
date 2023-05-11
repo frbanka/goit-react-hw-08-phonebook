@@ -13,7 +13,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -33,4 +32,30 @@ h2 {
 }
 ::placeholder {
   font-style: italic;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style: none;
 }

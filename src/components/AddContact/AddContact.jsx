@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/managment';
 import { nanoid } from 'nanoid';
+import { addedContactNotification } from '../../redux/utils/notifications';
 
 import css from '../AddContact/AddContact.module.css';
 const AddContact = () => {
@@ -15,7 +16,7 @@ const AddContact = () => {
         phone: e.target.phone.value,
       })
     );
-
+    addedContactNotification(e.target.name.value);
     e.target.reset();
   };
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/managment';
 import { selectIsLoading } from '../../redux/selector';
+import Loader from 'components/Loader/Loader.js';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,11 @@ const Contacts = () => {
   return (
     <section className={css.contacts__section}>
       <div>
+        <h4 className={css.contacts__title}>
+          You have {contacts.length} contacts
+        </h4>
         <ul>
-          {!!isLoading && <b>Loading...</b>}
+          {!!isLoading && <Loader />}
           {contacts.map(contact => (
             <li key={contact.id}>
               <p>
