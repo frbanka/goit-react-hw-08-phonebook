@@ -6,7 +6,7 @@ import Filter from 'components/Filter/Filter';
 import Contacts from 'components/Contacts/Contacts';
 import { selectIsLoading, selectError } from 'redux/selector';
 import Loader from 'components/Loader/Loader';
-//import css from './Phonebook.module.css';
+import css from './Phonebook.module.css';
 
 export default function Phonebook() {
   const dispatch = useDispatch();
@@ -18,12 +18,12 @@ export default function Phonebook() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={css.phonebook}>
       <title>Phonebook</title>
       <AddContact />
       <Filter />
       <Contacts />
       {!!isLoading && !error && <Loader />}
-    </>
+    </div>
   );
 }

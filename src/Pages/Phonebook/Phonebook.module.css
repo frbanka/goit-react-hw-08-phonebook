@@ -1,0 +1,4 @@
+.phonebook {
+    display: flex;
+    flex-direction: column;
+}
