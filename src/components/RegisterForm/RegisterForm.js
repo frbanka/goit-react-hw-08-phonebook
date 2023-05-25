@@ -38,7 +38,7 @@ export const RegisterForm = () => {
         {...props}
       >
         {'Copyright © '}
-        <Link color="inherit" href="https://github.com/">
+        <Link color="inherit" href="https://github.com/frbanka">
           Jacek W.
         </Link>{' '}
         {new Date().getFullYear()}

@@ -33,8 +33,8 @@ const Filter = () => {
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5">
-            Find contact
+          <Typography component="h1" variant="h4">
+            Phonebook list
           </Typography>
           <Box onChange={e => filterChange(e)} sx={{ mt: 2 }}>
             <Grid container>

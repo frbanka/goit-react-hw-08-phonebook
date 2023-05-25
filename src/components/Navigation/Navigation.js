@@ -1,24 +1,53 @@
 import { useLocation } from 'react-router-dom';
-import { useAuth } from 'hooks';
 import { NavLink } from 'react-router-dom';
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 export const Navigation = () => {
-  const { isLoggedIn } = useAuth();
   const location = useLocation();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <nav>
-      <NavLink active={location.pathname === '/' ? 'on' : 'off'} to="/" end>
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink
-          active={location.pathname.startsWith('/phonebook') ? 'on' : 'off'}
-          to="/phonebook"
-        >
-          Phonebook
+    <div>
+      <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        Menu
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <NavLink active={location.pathname === '/' ? 'on' : 'off'} to="/" end>
+          <MenuItem onClick={handleClose}>Home</MenuItem>
         </NavLink>
-      )}
-    </nav>
+        <NavLink to="/register">
+          <MenuItem onClick={handleClose}>Register user</MenuItem>
+        </NavLink>
+        <NavLink to="/login">
+          <MenuItem onClick={handleClose}>Log in</MenuItem>
+        </NavLink>
+      </Menu>
+    </div>
   );
 };
