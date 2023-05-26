@@ -64,7 +64,7 @@ export const LoginForm = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log in
+            Log in to your account
           </Typography>
           <Box
             component="form"
@@ -99,7 +99,7 @@ export const LoginForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Log in
             </Button>
             <Grid container>
               <Grid item xs>

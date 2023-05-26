@@ -48,14 +48,15 @@ const Contacts = () => {
   }
 
   function stringAvatar(name) {
+    const avatarName = name.split(' ')[0][0];
+    const upperCaseName = avatarName.toUpperCase();
     return {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+      children: `${upperCaseName}`,
     };
   }
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
